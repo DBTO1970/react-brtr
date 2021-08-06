@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Button, Collapse, NavItem, Jumbotron, Form, FormGroup, Input, Label, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+
 
 class Header extends Component {
 
@@ -39,12 +39,12 @@ class Header extends Component {
     render() {
         return(
             <React.Fragment>
-                <Jumbotron fluid>
+                <Jumbotron className="fluid">
                     <div className='container'>
                         <div className='row'>
                             <div className= 'col'>
                                 <h1>| BRTR |</h1>
-                                <img src="assets/img/brtr_logoArtboard1.png" height="100" width="100" alt="BRTR Logo" />
+                                <img className="img-fluid align-top" src="assets/img/brtr_logoArtboard1.png" height="100" width="100" alt="BRTR Logo" />
                                 <h2>In trade, barter is a system of exchange in which participants in a transaction directly exchange goods or services for other goods or services without using a medium of exchange, such as money.</h2>
                             </div>
                         </div>
