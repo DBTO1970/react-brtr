@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Button, Collapse, NavItem, Jumbotron, Form, FormGroup, Input, Label, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-
 
 class Header extends Component {
 
@@ -39,13 +38,12 @@ class Header extends Component {
     render() {
         return(
             <React.Fragment>
-                <Jumbotron className="fluid">
+                <Jumbotron fluid>
                     <div className='container'>
                         <div className='row'>
                             <div className= 'col'>
-                                <h1>| BRTR |</h1>
-                                <img className="img-fluid align-top" src="assets/img/brtr_logoArtboard1.png" height="100" width="100" alt="BRTR Logo" />
-                                <h2>In trade, barter is a system of exchange in which participants in a transaction directly exchange goods or services for other goods or services without using a medium of exchange, such as money.</h2>
+                                <h1> | BRTR | </h1>
+                                <h2>Browse - Trade - Connect</h2>
                             </div>
                         </div>
                     </div>
@@ -53,7 +51,7 @@ class Header extends Component {
 
                 <Navbar dark sticky="top" expand='md'>
                     <div className="container">
-                        <NavbarBrand className='mr-auto' href="/"><img src="../assets/img/brtr_logoArtboard1.png" height="30" width="30" alt="BRTR Logo" /></NavbarBrand>
+                        <NavbarBrand className='mr-auto' href="/"><img src="/assets/images/logo.png" height="30" width="30" alt="NuCamp Logo" /></NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
@@ -115,4 +113,5 @@ class Header extends Component {
         );
     }
 }
+
 export default Header;
