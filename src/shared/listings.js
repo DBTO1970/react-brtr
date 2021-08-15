@@ -1,4 +1,4 @@
-export const LISTINGS = 
+export default LISTINGS = 
 [
     {
         id: 0,
@@ -20,4 +20,5 @@ export const LISTINGS =
         have: true,
         item: "IT set-up"
     },
-]
+];
+

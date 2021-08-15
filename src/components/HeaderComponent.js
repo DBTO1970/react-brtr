@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './LoginComponent';
 
+
 class Header extends Component {
     render() {
         return(
@@ -12,6 +13,7 @@ class Header extends Component {
                     </div>
                 </div>
                 <Login />
+                
             </div>
         );
     } 
