@@ -1,46 +1,35 @@
 import React, { Component } from 'react';
+import { Card} from '@material-ui/core';
+import { CardImg, CardImgOverlay, CardTitle  } from 'reactstrap';
+import ListingInfo from './ListingInfoComponent';
 
 class Directory extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listings: [
-                {
-                    id: 0,
-                    user: 'user1',
-                    have: false,
-                    item: "leather work",
-                    image: "/assets/img/la-compagnie-robinson-nijXsx-oI7Y-unsplash_sm.png"
-                },
-            
-                {
-                    id: 1,
-                    user: 'user2',
-                    have: true,
-                    item: "eggs",
-                    image: "/assets/img/kelly-neil-omEpnvmwWz0-unsplash_sm.png"
-                },
-            
-                {
-                    id: 2,
-                    user: 'user3',
-                    have: true,
-                    item: "Perfume",
-                    image: "/assets/img/katherine-hanlon-mod2s3-qFOc-unsplash_sm.png"
-                },
-            ],
+            selectedListing: null
         };
     }
 
+    onListingSelect(listing) {
+        this.setState({selectedListing: listing});
+    }
+
+    
+
     render() {
-        const directory = this.state.listings.map(listing => {
+        const directory = this.props.listings.map(listing => {
            
             return (
-                <div key={listing.id} className="col">
-                    <img src={listing.image} alt={listing.user} />
-                    <h2>{listing.user}</h2>
-                    <p>{listing.item}</p>
-                    <p>{listing.have}</p>
+                <div key={listing.id} className="col-md-5 m-1">
+                    <Card onClick={() => this.onListingSelect(listing)}>
+                        <CardImg width="100%" src={listing.image} alt={listing.item} />
+                        <CardImgOverlay>
+                        <CardTitle>{listing.user} - {listing.item}</CardTitle>
+                        
+                        
+                        </CardImgOverlay>
+                    </Card>
                 </div>
             );
         })
@@ -49,9 +38,11 @@ class Directory extends Component {
                 <div className="row">
                     {directory}
                 </div>
+                <ListingInfo listing={this.state.selectedListing} />
             </div>
         );
     }
 }
+
 
 export default Directory;
